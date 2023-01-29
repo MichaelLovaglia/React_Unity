@@ -1,0 +1,33 @@
+.galleryImage {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+
+
+  @media only screen and (min-width: 600px) {
+    .galleryImage {
+        width: 100%;
+      }
+      
+  }
+  @media only screen and (min-width: 768px) {
+    .galleryImage {
+        width: 50%;
+      }
+      
+  }
+  @media only screen and (min-width: 992px) {
+    .galleryImage {
+        width: 50%;
+      }
+      
+  }
+  @media only screen and (min-width: 1200px) {
+    .galleryImage {
+        width: 25%;
+      }
+      
+  }
+  

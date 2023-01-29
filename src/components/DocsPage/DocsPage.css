@@ -1,0 +1,28 @@
+.docs {
+  padding: 1em;
+  background-color: #e2e2e2;
+}
+
+.docs img {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .docs {
+    padding: 5em;
+  }
+
+  .docs img {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .docs {
+    padding: 8em;
+  }
+}
+/* */

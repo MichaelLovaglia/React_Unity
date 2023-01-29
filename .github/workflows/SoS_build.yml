@@ -1,0 +1,24 @@
+name: SoS Build Responder
+ 
+on: 
+ [repository_dispatch]
+ 
+jobs:
+  GET_UNITY_GAME:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Event Information
+        run: |
+          echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
+      - name: Dispatch response to received SoS update
+        if: github.event.action == 'update-web'
+        run: |
+          git clone https://.:${{secrets.PAT_TOKEN }}@github.com/${{secrets.GH_USERNAME}}/${{secrets.GAME_REPO}}.git
+          rm -rf public/unity
+          mv ${{secrets.GAME_REPO}}/unity public
+          rm -rf ${{secrets.GAME_REPO}}
+ 
+      - uses: mikeal/publish-to-github-action@master
+        env:
+         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}

@@ -1,0 +1,11 @@
+.social a {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.social a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.social a:active {
+  color: #fff;
+}
